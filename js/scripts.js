@@ -20,6 +20,19 @@ $(document).ready(function(){
 	  return this;
 	};
     
+    
+    //password
+    $('.js-btn-password').on('click', function() {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+            $(this).parent('.frm-field-password').find('input').attr('type', 'password');
+        } else {
+            $(this).addClass('active');
+            $(this).parent('.frm-field-password').find('input').attr('type', 'text');
+        }
+        return false;
+    })
+    
 	
     //popup block
 	$('.js-popup-wrap .js-btn-toggle').on('click', function() {

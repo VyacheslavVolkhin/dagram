@@ -1,6 +1,46 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.filter-box {
+    margin-bottom: 5px;
+    .filter-title {
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: bold;
+        color: var(--clr-base-dark);
+        margin: 0 0 10px 0;
+        .fm;
+    }
+    .filter-inner-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -8px;
+    }
+    .filter-field {
+        width: 50%;
+        padding: 0 8px;
+        margin-bottom: 10px;
+    }
+    .field-summ {
+        width: auto;
+        flex: 1;
+    }
+    .field-submit {
+        flex-shrink: 0;
+        width: auto;
+    }
+    .btn {
+        &.button-base {
+            min-width: 110px;
+            padding: 0 20px;
+        }
+    }
+    .form-input {
+        border-radius: 5px;
+        background-color: transparent;
+        height: 42px;
+    }
+}
 .popup-select-box {
     background: #fff;
     position: relative;
@@ -143,6 +183,10 @@
             .ft;
         }
     }
+    .frm-wrap {
+        max-width: 320px;
+        margin: 0 auto;
+    }
     .frm-row {
         margin: 0 -8px;
         display: flex;
@@ -178,11 +222,41 @@
                 margin: 0;
             }
         }
+        &.row-line-fix {
+            margin-bottom: 15px;
+            align-items: center;
+            .frm-label {
+                margin: 0;
+                padding: 0 0 0 8px;
+                width: 173px;
+                flex-shrink: 0;
+                &.label-vshort {
+                    width: 45px;
+                }
+                &.label-short {
+                    width: 80px;
+                }
+                &.label-medium {
+                    width: 125px;
+                }
+            }
+            .frm-field {
+                flex: 1;
+                width: auto;
+                padding: 0 8px 0 8px;
+                margin: 0;
+            }
+        }
     }
     .frm-label {
         display: block;
         color: var(--clr-base);
         flex-shrink: 0;
+        &.label-small {
+            font-size: 16px;
+            line-height: 21/16;
+            .ft;
+        }
     }
     .frm-row-submit {
         display: flex;
@@ -217,6 +291,15 @@
                 padding: 0 5rem;
                 font-size: 2.2rem;
                 min-width: 29.5rem;
+            }
+            &.button-base {
+                height: 42px;
+                padding: 0 3.5rem;
+                border-radius: 5px;
+                font-size: 16px;
+                text-transform: none;
+                font-weight: 400;
+                .ft;
             }
         }
     }
@@ -260,6 +343,20 @@
     .form-input,
     select.form-input {
         background-color: transparent;
+    }
+    .btn {
+        &.button-image {
+            height: 5.5rem;
+            border-radius: 2.7rem;
+            padding: 0 10px;
+            min-width: 33rem;
+            max-width: 100%;
+            img {
+                width: 17rem;
+                max-width: 100%;
+                display: block;
+            }
+        }
     }
 }
 .fancybox-bg {
@@ -1787,18 +1884,22 @@
             }
         }
         .frm-row {
-            &.row-line {
+            &.row-line, &.row-line-fix {
                 flex-wrap: wrap;
                 .frm-label {
                     width: 100%;
                     padding: 0 8px;
                     margin: 0 0 10px 0;
+                    &.label-short, &.label-medium, &.label-vshort {
+                        width: 100%;
+                    }
                 }
                 .frm-field {
                     width: 100%;
                 }
             }
         }
+        
     }
     .inner-top-box {
         .pic-outer-wrap {
@@ -1829,6 +1930,17 @@
     }
 }
 @media (min-width: 768px) {
+    .filter-box {
+        .filter-field {
+            width: 25%;
+        }
+        .field-summ {
+            width: auto;
+        }
+        .field-submit {
+            width: auto;
+        }
+    }
     .lk-history-box {
     }
     .lk-form-box {
@@ -1861,6 +1973,32 @@
             .inner-wrap {
                 padding-top: 0;
             }
+        }
+    }
+    .filter-box {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 15px;
+        .filter-title {
+            font-size: 20px;
+            margin: 0;
+            padding: 0 15px 0 0;
+            flex-shrink: 0;
+        }
+        .filter-wrap {
+            flex-shrink: 0;
+        }
+        .filter-field {
+            width: 242px;
+            margin: 0;
+        }
+        .field-summ {
+            flex: inherit;
+            flex-shrink: 0;
+        }
+        .field-submit {
+            width: auto;
         }
     }
     .select-box {
@@ -2423,6 +2561,11 @@
     }
 }
 @media (min-width: 1400px) {
+    .filter-box {
+        .field-summ {
+            width: 350px;
+        }
+    }
     .lk-history-box {
         .hs-section-wrap {
             width: 50%;

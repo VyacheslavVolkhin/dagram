@@ -232,18 +232,94 @@ html {
             justify-content: space-between;
             padding-top: 10px;
             padding-bottom: 10px;
+            padding-right: 2px;
         }
         .actions-wrap {
             display: flex;
             align-items: center;
-            margin-right: -6px;
+            justify-content: flex-end;
+            flex: 1;
         }
         .action-wrap {
-            margin-left: 15px;
+            padding-left: 15px;
+            margin: 0;
             position: relative;
+            flex-shrink: 0;
+        }
+        .action-lanuage {
+            .dropdown-content-block {
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-top: 15px;
+                margin-left: -60px;
+                min-width: 100%;
+                text-align: center;
+                width: 120px;
+                padding: 10px 0;
+                a {
+                    display: block;
+                    padding: 10px 20px;
+                    &.active {
+                        display: none;
+                    }
+                    &:hover {
+                        background: #f0f0f0;
+                    }
+                }
+            }
         }
         .action-search {
-            margin-left: 8px;
+            padding-left: 8px;
+        }
+        .action-menu {
+            padding-left: 0;
+        }
+        .action-auth {
+            padding-right: 15px;
+        }
+        .action-login {
+            display: block;
+            max-width: calc(100% - 170px);
+            padding-right: 15px;
+            .dropdown-content-block {
+                display: block;
+                background: none;
+            }
+            .button-header {
+                display: none;
+            }
+            .login-exit {
+                display: none;
+            }
+            .login-button {
+                .btn {
+                    &.button-lk {
+                        padding: 0 15px 0 5px;
+                        .button-title {
+                            flex-shrink: 1;
+                            display: block;
+                            position: relative;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            .ft;
+                        }
+                        .button-ico {
+                            flex-shrink: 0;
+                            width: 34px;
+                            height: 34px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            margin: 0 10px 0 0;
+                            img {
+                                max-width: 28px;
+                                max-height: 28px;
+                            }
+                        }
+                    }
+                }
+            }
         }
         .action-lanuage {
             padding: 0 1px;
@@ -265,7 +341,7 @@ html {
             }
         }
         .logo-wrap {
-            width: 38.2rem;
+            width: 26.2rem;
         }
         .dropdown-content-block {
             display: none;
@@ -329,8 +405,17 @@ html {
 }
 @media (max-width: 767px) {
     .header {
+        .inner-wrap {
+            justify-content: space-between;
+        }
         .logo-wrap {
-            width: auto;
+            width: 65px;
+        }
+        .actions-wrap {
+            max-width: calc(100% - 65px);
+        }
+        .action-login {
+            
         }
         .logo {
             width: 65px;
@@ -448,7 +533,7 @@ html {
             flex-shrink: 0;
             position: relative;
         }
-        .action-auth {
+        .action-auth, .action-login {
             .btn-action-ico {
                 display: none;
             }
@@ -456,6 +541,25 @@ html {
                 display: flex;
                 li {
                     flex-shrink: 0;
+                }
+            }
+            .btn {
+                &.button-lk {
+                    padding: 0 15px 0 5px;
+                    .button-title {
+                        .ft;
+                    }
+                    .button-ico {
+                        width: 34px;
+                        height: 34px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        margin: 0 10px 0 0;
+                        img {
+                            max-width: 28px;
+                            max-height: 28px;
+                        }
+                    }
                 }
             }
         }
